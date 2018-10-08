@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".IvOperationActivity">
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:id="@+id/rg"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbMatrix"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="matrix"/>
+        <RadioButton
+            android:id="@+id/rbCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="center"/>
+        <RadioButton
+            android:id="@+id/rbCenterCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="centerCrop"/>
+        <RadioButton
+            android:id="@+id/rbCenterInside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="centerInside"/>
+        <RadioButton
+            android:id="@+id/rbFitCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitCenter"/>
+        <RadioButton
+            android:id="@+id/rbFitEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitEnd"/>
+        <RadioButton
+            android:id="@+id/rbFitStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitStart"/>
+        <RadioButton
+            android:id="@+id/rbFitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitXY"/>
+    </RadioGroup>
+
+
+    <ImageView
+        android:background="@android:color/background_dark"
+        android:id="@+id/iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="center"
+        android:src="@drawable/wk"/>
+
+</LinearLayout>
