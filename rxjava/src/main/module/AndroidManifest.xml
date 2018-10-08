@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wk.rxjava">
+
+    <application
+        android:name=".debug.RxJavaApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="module_rxJava"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.RxJavaMainListActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.RxJavaCreationActivity" />
+        <activity android:name=".ui.RxJavaChangeActivity" />
+        <activity android:name=".ui.RxJavaAuxiliaryActivity" />
+        <activity android:name=".ui.RxJavaExampleActivity"></activity>
+    </application>
+
+</manifest>
