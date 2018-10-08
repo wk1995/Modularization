@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wk.retrofit">
+    <application
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.RetrofitMainActivity"/>
+    </application>
+</manifest>
