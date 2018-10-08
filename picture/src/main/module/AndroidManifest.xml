@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wk.picture">
+
+    <application
+        android:name=".debug.PicApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="module_pic"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.PicMainListActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MemoryComparisonActivity" />
+        <activity android:name=".ui.GliderOperationActivity"/>
+    </application>
+
+</manifest>
