@@ -1,4 +1,4 @@
-package com.wk.okhttp.debug
+package com.wk.debug
 
 import com.wk.common.BaseApplication
 

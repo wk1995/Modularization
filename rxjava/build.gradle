@@ -38,7 +38,7 @@ android {
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
                 java {
-                    exclude 'com.wk.okhttp.debug/RxJavaApplication'
+                    exclude 'com.wk.rxjava.debug/RxJavaApplication'
                 }
             }
         }

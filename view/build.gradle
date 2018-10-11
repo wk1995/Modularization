@@ -37,7 +37,7 @@ android {
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
                 java {
-                    exclude 'debug/ViewApplication'
+                    exclude 'com.wk.view.debug/ViewApplication'
                 }
             }
         }
