@@ -1,1 +1,1 @@
-include ':app', ':common', ':main', ':hotfix', ':list', ':picture', ':view', ':rxjava', ':okhttp', ':retrofit'
+include ':app', ':common', ':main', ':hotfix', ':list', ':picture', ':view', ':rxjava', ':okhttp', ':retrofit', ':fragment'

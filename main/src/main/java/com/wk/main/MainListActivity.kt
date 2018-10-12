@@ -16,6 +16,7 @@ class MainListActivity : BaseMainListActivity() {
         activityList.add("rxJava")
         activityList.add("okHttp")
         activityList.add("retrofit")
+        activityList.add("fragment")
         activityList
     }
     override fun getRecyclerItemList()=activityList
@@ -50,6 +51,10 @@ class MainListActivity : BaseMainListActivity() {
             activityList[6]->ARouter
                     .getInstance()
                     .build(RouterPath.RetrofitMainActivity)
+                    .navigation()
+            activityList[7]->ARouter
+                    .getInstance()
+                    .build(RouterPath.FragmentMainListActivity)
                     .navigation()
         }
 

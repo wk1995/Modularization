@@ -43,4 +43,12 @@ object RouterPath {
 
     //module_Retrofit
     const val RetrofitMainActivity="/Retrofit/ui/activity/RetrofitMainActivity"
+
+    //module_Fragment
+    const val FragmentMainListActivity="/Fragment/ui/activity/FragmentMainListActivity"
+    const val ViewReplaceFragmentActivity="/Fragment/ui/activity/ViewReplaceFragmentActivity"
+
+
+
+
 }
