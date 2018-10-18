@@ -49,6 +49,12 @@ object RouterPath {
     const val ViewReplaceFragmentActivity="/Fragment/ui/activity/ViewReplaceFragmentActivity"
 
 
+    //WebMainActivity
+    const val WebMainActivity="/web/ui/activity/WebMainActivity"
+
+
+
+
 
 
 }

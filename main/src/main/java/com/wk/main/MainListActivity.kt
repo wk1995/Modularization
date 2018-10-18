@@ -17,6 +17,7 @@ class MainListActivity : BaseMainListActivity() {
         activityList.add("okHttp")
         activityList.add("retrofit")
         activityList.add("fragment")
+        activityList.add("WebMainActivity")
         activityList
     }
     override fun getRecyclerItemList()=activityList
@@ -55,6 +56,10 @@ class MainListActivity : BaseMainListActivity() {
             activityList[7]->ARouter
                     .getInstance()
                     .build(RouterPath.FragmentMainListActivity)
+                    .navigation()
+            activityList[7]->ARouter
+                    .getInstance()
+                    .build(RouterPath.WebMainActivity)
                     .navigation()
         }
 
