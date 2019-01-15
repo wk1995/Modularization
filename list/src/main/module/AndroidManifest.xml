@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wk.list">
+
     <!-- 允许程序设置内置sd卡的读写权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
-        android:allowBackup="true"
         android:name="com.wk.debug.ListApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="module_list"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ListActivityMainListActivity">
+        <activity android:name=".ListActivityMainListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ListViewListActivity" />
-        <activity android:name=".ui.ListViewPullFlushActivity"/>
+        <activity android:name=".listView.ListViewListActivity" />
+        <activity android:name=".listView.ListViewPullFlushActivity" />
+        <activity android:name=".rv.RvMainListActivity" />
+        <activity android:name=".rv.simple.RvSimpleOneItemActivity" />
+        <activity android:name=".rv.click.RvClickCallBackActivity" />
+        <activity android:name=".rv.expand.RvExpandActivity" />
+        <activity android:name=".rv.drag.RvDragActivity"></activity>
     </application>
 
 </manifest>
