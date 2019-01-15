@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wk.modularization.hardware">
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".HardwareMainActivity" />
+        <activity android:name="com.wk.modularization.hardware.media.MediaActivity" />
+        <activity android:name="com.wk.modularization.hardware.surface.SurfaceActivity"/>
+    </application>
+
+</manifest>

@@ -35,7 +35,9 @@ dependencies {
         implementation project(':okhttp')
         implementation project(':retrofit')
         implementation project(':fragment')
-        implementation project(':WebMainActivity')
+        implementation project(':web')
+        implementation project(':hardware')
+        implementation project(':ipc')
     }
 }
 repositories {

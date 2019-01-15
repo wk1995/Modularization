@@ -19,6 +19,11 @@ object RouterPath {
     const val ListActivityMainActivity="/list/ui/activity/ListActivityMainActivity"
     const val ListViewActivity="/list/ui/activity/ListViewActivity"
     const val ListViewPullFlushActivity="/list/ui/activity/ListViewPullFlushActivity"
+    const val RvMainListActivity="/list/ui/activity/RvMainListActivity"
+    const val RvSimpleOneItemActivity="/list/ui/activity/RvSimpleOneItemActivity"
+    const val RvClickCallBackActivity="/list/ui/activity/RvClickCallBackActivity"
+    const val RvExpandActivity="/list/ui/activity/RvExpandActivity"
+    const val RvDragActivity="/list/ui/activity/RvDragActivity"
 
 
 
@@ -49,9 +54,19 @@ object RouterPath {
     const val ViewReplaceFragmentActivity="/Fragment/ui/activity/ViewReplaceFragmentActivity"
 
 
-    //WebMainActivity
+    //web
     const val WebMainActivity="/web/ui/activity/WebMainActivity"
 
+    //module_hardware
+    const val HardwareMainActivity="/hardware/ui/activity/HardwareMainActivity"
+    const val MediaActivity="/hardware/ui/activity/MediaActivity"
+    const val SurfaceActivity="/hardware/ui/activity/SurfaceActivity"
+
+    //module_ipc
+    const val IpcMainActivity="/process/ui/activity/IpcMainActivity"
+    const val ACTIVITY_AIDL="/process/ui/activity/AIDLActivity"
+    const val ACTIVITY_MESSENGER="/process/ui/activity/messengerActivity"
+    const val ACTIVITY_BINDER_POOL="/process/ui/activity/BinderPoolActivity"
 
 
 

@@ -44,7 +44,6 @@ class OkHttpMainActivity : BaseActivity(), View.OnClickListener {
                         .url(testUrl)
                         .post(requestBody)
                         .build()
-
             }
         }
         if(request==null) return
