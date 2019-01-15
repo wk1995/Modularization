@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wk.ipc">
+
+    <permission
+        android:name="com.wk.ipc.ACCESS_WK_SERVICE"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.wk.ipc.ACCESS_WK_SERVICE" />
+
+    <application
+        android:name=".debug.IpcApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="module_list"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.IpcMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".messenger.MessengerActivity" />
+
+        <service android:name=".messenger.MessengerService" />
+        <service
+            android:name=".aidl.AIDLService"
+            android:process=":remote" />
+        <service android:name=".socket.SocketService" />
+
+        <activity android:name=".aidl.AIDLActivity" />
+        <activity android:name=".pool.BinderPoolActivity" />
+
+        <service
+            android:name=".pool.BinderPoolService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>
