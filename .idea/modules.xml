@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Modularization.iml" filepath="$PROJECT_DIR$/Modularization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/context/context.iml" filepath="$PROJECT_DIR$/context/context.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragment/fragment.iml" filepath="$PROJECT_DIR$/fragment/fragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/hardware/hardware.iml" filepath="$PROJECT_DIR$/hardware/hardware.iml" />
       <module fileurl="file://$PROJECT_DIR$/hotfix/hotfix.iml" filepath="$PROJECT_DIR$/hotfix/hotfix.iml" />

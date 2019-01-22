@@ -11,6 +11,12 @@ package com.wk.common.constant
  * </pre>
  */
 object RouterPath {
+
+    //module_context
+    const val ContextMainActivity="/context/ui/activity/ContextMainActivity"
+    const val ActivityMainActivity="/context/ui/activity/ActivityMainActivity"
+
+
     //module_hotfix
     const val HotfixActivityMainActivity="/hotfix/ui/activity/HotfixActivityMainActivity"
 
@@ -63,11 +69,14 @@ object RouterPath {
     const val SurfaceActivity="/hardware/ui/activity/SurfaceActivity"
 
     //module_ipc
-    const val IpcMainActivity="/process/ui/activity/IpcMainActivity"
-    const val ACTIVITY_AIDL="/process/ui/activity/AIDLActivity"
-    const val ACTIVITY_MESSENGER="/process/ui/activity/messengerActivity"
-    const val ACTIVITY_BINDER_POOL="/process/ui/activity/BinderPoolActivity"
+    const val IpcMainActivity="/ipc/ui/activity/IpcMainActivity"
+    const val ACTIVITY_AIDL="/ipc/ui/activity/AIDLActivity"
+    const val ACTIVITY_MESSENGER="/ipc/ui/activity/messengerActivity"
+    const val ACTIVITY_BINDER_POOL="/ipc/ui/activity/BinderPoolActivity"
 
+
+    //module_animation
+    const val AnimationMainActivity="/animation/activity/AnimationMainActivity"
 
 
 
