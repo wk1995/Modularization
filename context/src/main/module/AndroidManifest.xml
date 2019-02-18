@@ -1,11 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wk.context" >
+    package="com.wk.context">
+
     <!-- 允许程序设置内置sd卡的读写权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.wk.context.debug.ContextApplication"
+        android:name=".debug.ContextApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="module_list"
@@ -17,6 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ActivityMainActivity" />
+        <activity android:name=".activity.SecondActivity" />
+        <activity android:name=".service.ServiceMainActivity" />
+
+        <service
+            android:name=".service.StartService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.BindService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
