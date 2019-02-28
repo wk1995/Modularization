@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/close"
+        android:id="@+id/item1"
+        android:title="item1"
+        android:orderInCategory="80"
+        app:showAsAction="ifRoom"/>
+    <item android:icon="@drawable/cry"
+        android:id="@+id/item2"
+        android:title="item2"
+        android:orderInCategory="90"
+        app:showAsAction="always"/>
+    <item android:icon="@drawable/comments"
+        android:id="@+id/item3"
+        android:title="item3"
+        android:visible="true"
+        android:orderInCategory="1"
+        app:showAsAction="never"/>
+    <item android:icon="@drawable/category"
+        android:id="@+id/item4"
+        android:title="item4"
+        android:visible="false"
+        android:orderInCategory="80"
+        app:showAsAction="withText"/>
+    <item android:icon="@drawable/cry"
+        android:id="@+id/item5"
+        android:title="item5"
+        android:orderInCategory="90"
+        app:showAsAction="collapseActionView"/>
+</menu>

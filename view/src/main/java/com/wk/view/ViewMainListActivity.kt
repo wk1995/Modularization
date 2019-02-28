@@ -11,24 +11,38 @@ import com.wk.common.constant.RouterPath
 
 @Route(path = RouterPath.ViewMainActivity)
 class ViewMainListActivity : BaseMainListActivity() {
-    @Volatile
-    var i=0L
-    private val operationList by lazy{
-        val list=ArrayList<String>()
-        list.add("ImageView")
+    companion object {
+        const val IMAGE_VIEW = "ImageView"
+        const val REMOTE_VIEWS = "RemoteViews"
+        const val TOOL_BAR = "toolbar"
+    }
+
+    private val operationList by lazy {
+        val list = ArrayList<String>()
+        list.add(IMAGE_VIEW)
+        list.add(REMOTE_VIEWS)
+        list.add(TOOL_BAR)
         list
     }
 
-    override fun getRecyclerItemList()=operationList
+    override fun getRecyclerItemList() = operationList
 
-    override fun onRecyclerItemClick(bundle: Bundle?, vararg objects: Any?){
-        val itemPosition=bundle?.getInt(BundleKey.ItemPosition,-1)
-        when(itemPosition){
-            0->Notificate(this).showNotification()
-               /* ARouter
+    override fun onRecyclerItemClick(bundle: Bundle?, vararg objects: Any?) {
+        val itemText = bundle?.getString(BundleKey.ItemText)
+        when (itemText) {
+            REMOTE_VIEWS -> ARouter
                     .getInstance()
-                    .build(RouterPath.IvOperationActivity)
-                    .navigation()*/
+                    .build(RouterPath.RemoteMainListActivity)
+                    .navigation()
+            IMAGE_VIEW ->
+                ARouter
+                        .getInstance()
+                        .build(RouterPath.IvOperationActivity)
+                        .navigation()
+            TOOL_BAR -> ARouter
+                    .getInstance()
+                    .build(RouterPath.ToolBarActivity)
+                    .navigation()
         }
     }
 

@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="module_pic"
-        android:theme="@style/AppTheme">
+        android:theme="@style/SchedulesAppTheme">
         <activity android:name=".ViewMainListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,7 +15,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IvOperationActivity"/>
+        <activity android:name=".IvOperationActivity" />
+        <activity android:name=".remote.RemoteMainListActivity" />
+        <activity android:name=".remote.RemoteEmptyActivity" />
+
+        <receiver android:name=".remote.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.wk.view.action.CLICK" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/view_widget_provider_info" />
+        </receiver>
+
+        <activity android:name=".notification.NotificationMainListActivity" />
+        <activity android:name=".toolbar.ToolBarActivity"></activity>
     </application>
 
 </manifest>
