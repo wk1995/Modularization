@@ -35,4 +35,5 @@ class ListActivityMainListActivity : BaseMainListActivity(){
                 ARouter.getInstance().build(RouterPath.RvMainListActivity).navigation()
         }
     }
+
 }

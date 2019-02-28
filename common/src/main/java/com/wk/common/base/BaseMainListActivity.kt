@@ -1,5 +1,6 @@
 package com.wk.common.base
 
+import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.wk.common.R
 import com.wk.common.adapter.MyAdapter
+import com.wk.common.constant.BundleKey
 import com.wk.common.transmission.RecyclerItemListener
 import kotlinx.android.synthetic.main.common_main_activity.*
 
@@ -38,5 +40,10 @@ abstract class BaseMainListActivity:BaseActivity(), RecyclerItemListener {
 
     abstract fun getRecyclerItemList():List<String>
 
+    override fun onRecyclerItemClick(bundle: Bundle?, vararg objects: Any?) {
+        val itemText=bundle?.getString(BundleKey.ItemText)
+        dealRecyclerItemClick(itemText)
+    }
 
+     protected open fun dealRecyclerItemClick(itemText:String?){}
 }

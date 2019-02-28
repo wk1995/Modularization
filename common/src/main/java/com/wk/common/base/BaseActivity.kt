@@ -2,10 +2,12 @@ package com.wk.common.base
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import timber.log.Timber
 
 abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Timber.i("${this.javaClass} onCreate")
         super.onCreate(savedInstanceState)
         if (getLayoutResource() != -1)
             setContentView(getLayoutResource())
@@ -24,4 +26,29 @@ abstract class BaseActivity : AppCompatActivity() {
     open fun initListener() {}
 
     open fun initParam() {}
+
+    override fun onRestart() {
+        Timber.i("${this.javaClass} onRestart")
+        super.onRestart()
+    }
+
+    override fun onResume() {
+        Timber.i("${this.javaClass} onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Timber.i("${this.javaClass} onPause")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Timber.i("${this.javaClass} onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Timber.i("${this.javaClass} onDestroy")
+        super.onDestroy()
+    }
 }

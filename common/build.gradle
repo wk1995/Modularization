@@ -29,11 +29,13 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     //support kotlin
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version"
-    api "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     api "com.android.support:appcompat-v7:$rootProject.supportAppcompatV7"
+    api "com.android.support:support-v4:$rootProject.supportAppcompatV7"
     api "com.android.support.constraint:constraint-layout:$rootProject.supportConstraint"
-    api 'com.android.support:recyclerview-v7:28.0.0'
+    api "com.android.support:recyclerview-v7:$rootProject.supportAppcompatV7"
+
+
     //路由
     api "com.alibaba:arouter-api:$rootProject.arouter"
     //日志

@@ -15,6 +15,7 @@ object RouterPath {
     //module_context
     const val ContextMainActivity="/context/ui/activity/ContextMainActivity"
     const val ActivityMainActivity="/context/ui/activity/ActivityMainActivity"
+    const val ServiceMainActivity="/context/ui/activity/ServiceMainActivity"
 
 
     //module_hotfix
@@ -41,6 +42,8 @@ object RouterPath {
     //module_view
     const val ViewMainActivity="/view/ui/activity/ViewMainActivity"
     const val IvOperationActivity="/view/ui/activity/IvOperationActivity"
+    const val RemoteMainListActivity="/view/ui/activity/RemoteMainListActivity"
+    const val ToolBarActivity="/view/ui/activity/ToolBarActivity"
 
     //module_RxJava
     const val RxJavaMainActivity="/RxJava/ui/activity/RxJavaMainActivity"
