@@ -4,10 +4,12 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.wk.common.constant.RouterPath
 import com.wk.rxjava.Operation
 import rx.Observable
+import rx.functions.Func0
 import java.util.*
 import java.util.concurrent.TimeUnit
 
 @Route(path = RouterPath.RxJavaCreationActivity)
+@Suppress("unused")
 class RxJavaCreationActivity : RxJavaOperationActivity() {
 
     override fun getOperators(): ArrayList<String> {
@@ -24,15 +26,19 @@ class RxJavaCreationActivity : RxJavaOperationActivity() {
     }
 
     @Operation
-    private fun create()=
-         Observable.create<String> {
-            it?.onNext("create")
-        }
-
+    private fun create() =
+            Observable.create<String> {
+                it?.onNext("create")
+            }
 
     @Operation
-    private fun just()=
-       Observable.just("just1", "just2")
+    private fun just(): Observable<String> {
+        var target = "just1"
+        val result = Observable.just(target)
+        target = "just2"
+        return result
+
+    }
 
 
     @Operation
@@ -45,31 +51,37 @@ class RxJavaCreationActivity : RxJavaOperationActivity() {
     }
 
     @Operation
-    private fun timer()=
-       Observable.timer(1000, TimeUnit.MILLISECONDS)
+    private fun timer() =
+            Observable.timer(1000, TimeUnit.MILLISECONDS)
 
 
     @Operation
-    private fun repeat()=
-         Observable.range(0, 10).repeat(3)
-
-
-
-
-    @Operation
-    private fun interval()=
-        Observable.interval(1000L,TimeUnit.MILLISECONDS)
+    private fun repeat() =
+            Observable.range(0, 10).repeat(3)
 
 
     @Operation
-    private fun range()=
-        Observable.range(0,100)
+    private fun interval() =
+            Observable.interval(1000L, TimeUnit.MILLISECONDS)
 
 
     @Operation
-    private fun defer()=
-        Observable.defer{
-            Observable.just("defer")
-        }
+    private fun range() =
+            Observable.range(0, 100)
+
+
+    //不懂它的作用，为啥不直接用call里面得到的Observable，反而还得嵌套这层defer
+    //https://www.jianshu.com/p/c83996149f5b
+    @Operation
+    private fun defer(): Observable<String> {
+        var target = "defer"
+        val result = Observable.defer(object : Func0<Observable<String>> {
+            override fun call(): Observable<String> {
+                return Observable.just(target)
+            }
+        })
+        target = "defer change"
+        return result
+    }
 
 }

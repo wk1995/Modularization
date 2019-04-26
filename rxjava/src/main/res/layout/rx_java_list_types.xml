@@ -6,6 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:text="创建型字符"
     android:padding="12dp"
-    android:textSize="14sp">
+    android:textSize="20sp">
 
 </TextView>

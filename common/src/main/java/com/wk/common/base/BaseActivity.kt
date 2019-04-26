@@ -1,7 +1,10 @@
 package com.wk.common.base
 
+import android.content.Intent
+import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import timber.log.Timber
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -50,5 +53,19 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onDestroy() {
         Timber.i("${this.javaClass} onDestroy")
         super.onDestroy()
+    }
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        Timber.i("${this.javaClass} onConfigurationChanged")
+        super.onConfigurationChanged(newConfig)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        Timber.i("${this.javaClass} onCreateOptionsMenu")
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        Timber.i("${this.javaClass} onNewIntent")
+        super.onNewIntent(intent)
     }
 }

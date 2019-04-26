@@ -49,4 +49,5 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     kapt "com.alibaba:arouter-compiler:$rootProject.annotationProcessor"
     implementation project(':common')
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }

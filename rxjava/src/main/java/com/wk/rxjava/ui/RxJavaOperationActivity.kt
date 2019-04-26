@@ -10,12 +10,13 @@ import com.wk.common.transmission.RecyclerItemListener
 import com.wk.rxjava.MyRecyclerViewAdapter
 import com.wk.rxjava.R
 import com.wk.rxjava.Reflect
+import com.wk.rxjava.SomeType
 import kotlinx.android.synthetic.main.rx_java_activity_creation.*
 import rx.Observable
+import rx.Subscriber
 import rx.Subscription
-import rx.functions.Action1
+import rx.functions.Func0
 import timber.log.Timber
-import java.util.*
 
 /**
  * <pre>
@@ -38,7 +39,7 @@ abstract class RxJavaOperationActivity : BaseActivity(), View.OnClickListener, R
     override fun getLayoutResource() = R.layout.rx_java_activity_creation
 
     override fun initView() {
-        rvOperatorChoose.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)
+        rvOperatorChoose.layoutManager = LinearLayoutManager(this)
         rvOperatorChoose.adapter = myRecyclerViewAdapter
         //设置分割线
         rvOperatorChoose.addItemDecoration(DividerItemDecoration(
@@ -51,13 +52,23 @@ abstract class RxJavaOperationActivity : BaseActivity(), View.OnClickListener, R
 
     override fun initListener() {
         btnPlay.setOnClickListener(this)
+        btnPlay1.setOnClickListener(this)
+        /* Observable.create<String> {
+             Timber.i("create:  ${Thread.currentThread().name}")
+             it?.onNext("create")
+         }.subscribeOn(AndroidSchedulers.mainThread())
+                 .observeOn(Schedulers.newThread())
+                 .subscribe {
+                     Timber.i(" onNext  ${Thread.currentThread().name}   $it")
+                 }*/
+
     }
 
     override fun onClick(v: View?) {
+
         when (v) {
             btnPlay -> {
-                if (mSubscription?.isUnsubscribed == true) {
-                } else {
+                if (mSubscription?.isUnsubscribed == false) {
                     mSubscription?.unsubscribe()
                     mSubscription = null
                 }
@@ -67,23 +78,41 @@ abstract class RxJavaOperationActivity : BaseActivity(), View.OnClickListener, R
                     it.isAccessible = true
                     if (it.name == operationName) {
                         mObservable = (it.invoke(this) as Observable<out Any>?)
-                        mSubscription = mObservable?.subscribe(
-                                object : Action1<Any?> {
-                                    override fun call(t: Any?) {
-                                        Timber.i(" subscriber  ${Thread.currentThread().name}  onNext ${t?.toString()
-                                                ?: "null"}")
-                                    }
-                                },
-                                object : Action1<Throwable> {
-                                    override fun call(t: Throwable?) {
-                                        Timber.i(" subscriber  ${Thread.currentThread().name}  onError ${t?.message
-                                                ?: "null"}")
-                                    }
-                                }
-                        )
+                        mSubscription = mObservable?.subscribe(object : Subscriber<Any?>() {
+                            override fun onNext(t: Any?) {
+                                Timber.i(" Subscriber  onNext  ${Thread.currentThread().name}   ${t?.toString()
+                                        ?: "null"}")
+                            }
+
+                            override fun onCompleted() {
+                            }
+
+                            override fun onError(e: Throwable?) {
+                                Timber.i(" Subscriber  onError ${Thread.currentThread().name}   ${e?.message
+                                        ?: "null"}")
+                            }
+                        })
                         return
                     }
                 }
+            }
+            btnPlay1 -> {
+               /* val mSomeType = SomeType()
+                val observable1 = mSomeType.valueJustObservable()
+                val observable2 = mSomeType.valueDeferObservable()
+                val observable3 = mSomeType.valueCreateObservable()
+                mSomeType.setValue("wk")
+                observable1.subscribe(System.out::println)
+                observable2.subscribe(System.out::println)
+                observable3.subscribe(System.out::println)*/
+                var target = "just1"
+                val result1 = Observable.just(target)
+                val result2 = Observable.defer{
+                     Observable.just(target)
+                }
+                target = "just2"
+                result1.subscribe(System.out::println)
+                result2.subscribe(System.out::println)
             }
         }
     }

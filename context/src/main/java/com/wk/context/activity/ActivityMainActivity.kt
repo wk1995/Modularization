@@ -1,6 +1,7 @@
 package com.wk.context.activity
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wk.common.base.BaseMainListActivity
@@ -36,4 +37,6 @@ class ActivityMainActivity : BaseMainListActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         Timber.i("requestCode : $requestCode  resultCode: $resultCode")
     }
+
+
 }

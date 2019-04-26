@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ActivityMainActivity" />
+        <activity android:name=".activity.ActivityMainActivity"
+
+            android:configChanges="keyboardHidden|orientation|screenSize"/> <!--旋转屏幕不销毁Activity-->
         <activity android:name=".activity.SecondActivity" />
         <activity android:name=".service.ServiceMainActivity" />
 
@@ -30,7 +32,7 @@
         <service
             android:name=".service.BindService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true"/>
     </application>
 
 </manifest>
